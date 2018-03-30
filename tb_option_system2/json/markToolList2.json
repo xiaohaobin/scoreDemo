@@ -1,0 +1,66 @@
+{
+	"code":0,
+	"name":"自定义覆盖物图片列表2",
+	"htmlData":[
+	      {	   
+	    	  "className":"tanbaIconList",
+	    	  "ele":"li",
+	    	  "htmlData":[
+	    	             
+	    	              {
+	    	            	 "id":25,
+	 	    	             "ele":"a",
+	 	    	             "src":"img/tb_normal2.png",
+	 	    	             "width":"19px",
+	 	    	             "height":"25px",
+	 	    	             "txt":"正常状态"
+	    	              },
+	    	             
+	    	              
+	    	              {
+	    	            	 "id":28,
+	 	    	             "ele":"a",
+	 	    	             "src":"img/tb_online2.gif",
+	 	    	             "width":"19px",
+	 	    	             "height":"25px",
+	 	    	            "txt":"在线状态"
+	 	    	             
+	    	              },
+	    	             
+	    	              {
+	    	            	 "id":30,
+	 	    	             "ele":"a",
+	 	    	             "src":"img/tb_outline.png",
+	 	    	             "width":"19px",
+	 	    	             "height":"25px",
+	 	    	            "txt":"离线状态"
+	    	              },
+	    	              {
+	    	            	 "id":31,
+	 	    	             "ele":"a",
+	 	    	             "src":"img/tb_scrap.png",
+	 	    	             "width":"19px",
+	 	    	             "height":"25px",
+	 	    	            "txt":"报废状态"
+	    	              },
+	    	              {
+	    	            	 "id":32,
+	 	    	             "ele":"a",
+	 	    	             "src":"img/tb_fault.png",
+	 	    	             "width":"19px",
+	 	    	             "height":"25px",
+	 	    	            "txt":"故障状态"
+	    	              },
+	    	              {
+	    	            	 "id":33,
+	 	    	             "ele":"a",
+	 	    	             "src":"img/tb_servicing.png",
+	 	    	             "width":"19px",
+	 	    	             "height":"25px",
+	 	    	            "txt":"维修中状态"
+	    	              }
+	    	   ]
+	      }
+	     
+	 ]
+}

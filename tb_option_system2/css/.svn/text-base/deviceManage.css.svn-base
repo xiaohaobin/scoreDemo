@@ -1,0 +1,13 @@
+.manage-content{
+	border-top: 1px solid #ddd;
+	margin-top: 10px;
+}
+.stateInforBar{
+	display: none;
+	color: #a00;
+	text-align: center;
+	padding-bottom: 20px;
+}
+.refresh{
+	float: right;
+}

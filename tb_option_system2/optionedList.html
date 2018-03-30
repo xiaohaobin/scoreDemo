@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.css"/>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<table class="table table-bordered table-striped table-responsive tbTable table-hover">
+				<thead>
+					<tr>
+						<th>硬件版本</th>
+						<th>设备id</th>
+						<th>经纬度</th>
+						<th>详细地址</th>
+						<th>安装区域</th>
+						<th>设备状态</th>
+						<th>位置类型</th>
+						<th>天线功率</th>
+						<th>创建时间</th>
+						<!--<th>操作</th>-->
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+			<p class="parentClear">
+				总数：
+				<b class="countNum rf"></b>
+			</p>
+		</div>
+		
+		<script src="../lib/jquery/1.9.1/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/layer/2.4/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/laypage/1.2/laypage.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.myPlugIn_v1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/optionedList.js" type="text/javascript" charset="utf-8"></script>
+		<!--导出插件区域-->
+		
+		<script type="text/javascript" src="../lib/exl/assets/js/third-party/exporter/jquery.base64-zhongwen.js"></script>
+		
+		<script type="text/javascript" src="../lib/exl/assets/js/kidd.stickytable.min.js"></script>
+		
+		<!--导出插件区域-->
+		<script type="text/javascript">
+			var options = {
+				"showExportBtn": true,
+				"exporter": {
+					"type": "xls",
+					"isTwoSide": false,
+					"position": "topright"
+				},
+				"style": "bordered",
+//				"color": "red",
+				"customColor": []
+			};
+			$('.table').stickyTable(options);
+			$(".stickytable-btn").addClass("btn btn-success");
+			$(".stickytable-btn").each(function(){
+				$(this).text("导出"+$(this).text());
+			});
+			
+			$.isMoblie(
+				function(){
+					$(".stickytable-btn").hide();
+				},
+				function(){
+					
+				}
+			);
+		</script>
+	</body>
+</html>

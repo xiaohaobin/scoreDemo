@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<!-- IE -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 设置 viewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 兼容国产浏览器的高速模式 -->
+		<meta name="renderer" content="webkit">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>设备管理</title>
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+		<!-- boots-->
+		<link rel="stylesheet" type="text/css" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/commo.css" />
+
+		<!--[if lt IE 8]>     
+      <link rel="stylesheet" type="text/css" href="../../lib/lxui/css/lxui-ie6.min.css"/>
+      <script src="../../lib/lxui/js/lxui-ie.min.js" type="text/javascript" charset="utf-8"></script>
+    <![endif]-->
+
+		<link rel="stylesheet" href="css/deviceManage.css" />
+		<style type="text/css">
+			table td:last-child,table th:last-child,.addDevice{
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<!--标题导航-->
+			<div class="title">
+				<h3 class="mainTitle">设备管理</h3>
+			</div>
+			<div class="">
+				<span class="c-gray secondTitle">设备管理</span>
+				<span class="glyphicon glyphicon-triangle-right c-gray2" aria-hidden="true"></span>
+				<span class="c-black targerPage">设备详情</span>
+			</div>
+			<!--管理设备内容-->
+			<div class="manage-content">
+				<!--搜索栏-->
+				<form class="form mb-10">
+					<div class="row mt-20">
+						<div class="form-group col-sm-3 col-xs-12">
+							<label for="searchType" class="required">搜索类型</label>
+							<select class="form-control" id="searchType">
+								<option value="0">全部</option>
+								<option value="1">设备ID</option>
+								<option value="2">部署地区</option>
+								<option value="3">详细地址</option>
+							</select>
+						</div>
+						<div class="form-group col-sm-3 col-xs-12">
+							<label for="deviceStatus" class="required">设备状态</label>
+							<select class="form-control" id="deviceStatus">
+								<option value="-1">全部</option>
+								<option value="0">正常</option>
+								<option value="1">在线</option>
+								<option value="2">离线</option>
+								<option value="3">故障</option>
+								<option value="4">维修中</option>
+								<option value="5">报废</option>
+							</select>
+						</div>
+						<div class="form-group col-sm-3 col-xs-12">
+							<label for="searchCont" class="required">搜索内容</label>
+							<input type="text" class="form-control" id="searchCont" placeholder="搜索内容" />
+						</div>
+						<div class="col-sm-3 col-xs-12">
+							<label for="searchCont" class="required">操作</label>
+							<div>
+								<button type="button" class="btn btn-success mr-20 queryTarget">查询</button>
+								<button type="button" class="btn btn-default refresh">
+									<i class="glyphicon glyphicon-refresh"></i>
+									<span>刷新</span>
+								</button>
+								<button type="button" class="btn btn-primary addDevice">新增设备</button>
+							</div>
+						</div>
+					</div>
+				</form>
+				<!--表格栏-->
+				<table class="table table-condensed table-hover table-striped table-responsive table-data" id="deviceLisTable">
+					<thead class="bg-gray">
+						<tr class="text-c">
+							<th>设备型号</th>
+							<th>设备MAC</th>
+							<th>设备ID</th>
+							<th>部署地区</th>
+							<th>详细地址</th>
+							<th>设备状态</th>
+							<th>经纬度</th>
+							<th>创建时间</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody class="text-c">
+						<!--<tr>
+							<td><input type="checkbox" name="" id="" value="" /></td>
+							<td>探霸5</td>
+							<td>DZ1712120100000025</td>
+							<td>深圳，南山</td>
+							<td>桃园路108号</td>
+							<td>正常</td>
+							<td>2017-01-02 01:02:12</td>
+							<td>
+								<a href="#">详情</a>
+							</td>
+						</tr>-->
+					</tbody>
+				</table>
+				<div class="stateInforBar">未发现连接的设备</div>
+				<!--表格面板底部工具栏sss-->
+				<div class="bg-gray table-footer parentClear text-c posi-r">
+					<div class="data-statistics">
+						<span>共</span>
+						<b class="pageNum">0</b>
+						<span>页</span> &nbsp;
+						<span>记录</span>
+						<b class="dataNum">0</b>
+						<span>条</span>
+					</div>
+
+					<div class="pageOption">
+						<div id="pageTool"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--主要框架类库sss-->
+		<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<!--<script src="../../lib/echarts/echarts.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/echarts/bmap.min.js" type="text/javascript" charset="utf-8"></script><br />
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8ZEtx5kDGsbBFL80Ppda29D8wjnGil7I"></script>-->
+		<!--主要框架类库eee-->
+
+		<!--公共脚本sss-->
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.diy.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<!--公共脚本eee-->
+
+		<!--常用插件sss-->
+		<script src="../lib/laypage/1.2/laypage.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/layer/2.4/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.nicescroll.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/My97DatePicker/4.8/WdatePicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/deviceManage.js" type="text/javascript" charset="utf-8"></script>
+		<!--常用插件eee-->
+
+	</body>
+
+</html>
